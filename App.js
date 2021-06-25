@@ -1,34 +1,50 @@
-import { StatusBar } from "expo-status-bar";
-import React, { useState, useEffect } from "react";
-import { Text, View, ImageBackground } from "react-native";
+import "react-native-gesture-handler";
+// FONTS
+import { useFonts } from "expo-font";
 
-import dummyData from "./data";
-import bgOne from "./src/img/bg-1.png";
-import AppStyle from "./src/styles/styleApp";
+import React, { useState } from "react";
+import { View, Text } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+
+// IMPORT SCREENS HERE
+import HomeScreen from "./src/screens/HomeScreen";
+import ProfileScreen from "./src/screens/ProfileScreen";
+
+// IMPORT UTILS
+
+const Stack = createStackNavigator();
 
 export default function App() {
-    const [profList, setprofList] = useState(null);
+    const [loaded] = useFonts({
+        "Montserrat-Regular": require("./assets/fonts/Montserrat-Regular.ttf"),
+        "Montserrat-Light": require("./assets/fonts/Montserrat-Light.ttf"),
+        "Montserrat-Bold": require("./assets/fonts/Montserrat-Bold.ttf"),
+        "Montserrat-Medium": require("./assets/fonts/Montserrat-Medium.ttf"),
+    });
 
-    // MIMICS AN API CALL
-
-    useEffect(() => {
-        setTimeout(() => {
-            setprofList(dummyData.profs);
-            console.log(profList);
-        }, 1000);
-    }, []);
+    if (!loaded) {
+        return (
+            <View>
+                <Text>Loading Fonts</Text>
+            </View>
+        );
+    }
 
     return (
-        <ImageBackground
-            source={bgOne}
-            style={AppStyle.background}
-            resizeMode="cover"
-        >
-            <View style={AppStyle.container}>
-                <Text>Find your Professor</Text>
-                <Text>Hello World!</Text>
-                <StatusBar style="auto" />
-            </View>
-        </ImageBackground>
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen
+                    name="Home"
+                    component={HomeScreen}
+                    options={{ title: "Home" }}
+                />
+                <Stack.Screen
+                    name="Profile"
+                    component={ProfileScreen}
+                    options={{ title: "Profile" }}
+                />
+            </Stack.Navigator>
+        </NavigationContainer>
     );
 }
