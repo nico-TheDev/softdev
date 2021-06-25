@@ -1,23 +1,34 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { useState, useEffect } from "react";
+import { Text, View, ImageBackground } from "react-native";
+
+import dummyData from "./data";
+import bgOne from "./src/img/bg-1.png";
+import AppStyle from "./src/styles/styleApp";
 
 export default function App() {
+    const [profList, setprofList] = useState(null);
+
+    // MIMICS AN API CALL
+
+    useEffect(() => {
+        setTimeout(() => {
+            setprofList(dummyData.profs);
+            console.log(profList);
+        }, 1000);
+    }, []);
+
     return (
-        <View style={styles.container}>
-            <Text>Boiler Plate of Software Development</Text>
-            <Text>Hello World!</Text>
-            <StatusBar style="auto" />
-        </View>
+        <ImageBackground
+            source={bgOne}
+            style={AppStyle.background}
+            resizeMode="cover"
+        >
+            <View style={AppStyle.container}>
+                <Text>Find your Professor</Text>
+                <Text>Hello World!</Text>
+                <StatusBar style="auto" />
+            </View>
+        </ImageBackground>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "#fff",
-        alignItems: "center",
-        justifyContent: "center",
-        fontSize: 30,
-    },
-});
