@@ -6,7 +6,7 @@ const data = {
             college: "Engineering",
             contact: "09123456233",
             email: "vincemamuyac@gmail.com",
-            image: require("./src/img/user-1.jpg"),
+            image: require("./img/user-1.jpg"),
             schedule: {
                 Mon: [
                     {
@@ -63,7 +63,7 @@ const data = {
             college: "Engineering",
             contact: "09123456234",
             email: "jdlcruz@gmail.com",
-            image: require("./src/img/user-2.jpg"),
+            image: require("./img/user-2.jpg"),
             schedule: {
                 Mon: [
                     {
@@ -120,7 +120,7 @@ const data = {
             college: "Engineering",
             contact: "09123456123",
             email: "ivanguevara@gmail.com",
-            image: require("./src/img/user-3.jpg"),
+            image: require("./img/user-3.jpg"),
             schedule: {
                 Mon: [
                     {
@@ -177,7 +177,7 @@ const data = {
             college: "Engineering",
             contact: "0912345345",
             email: "telbelano@gmail.com",
-            image: require("./src/img/user-4.jpg"),
+            image: require("./img/user-4.jpg"),
             schedule: {
                 Mon: [
                     {
@@ -234,7 +234,7 @@ const data = {
             college: "Engineering",
             contact: "0912345333",
             email: "gramsay@gmail.com",
-            image: require("./src/img/user-5.jpg"),
+            image: require("./img/user-5.jpg"),
             schedule: {
                 Mon: [
                     {
@@ -291,7 +291,7 @@ const data = {
             college: "Engineering",
             contact: "0912345355",
             email: "ukentsimi@gmail.com",
-            image: require("./src/img/user-6.jpg"),
+            image: require("./img/user-6.jpg"),
             schedule: {
                 Mon: [
                     {
@@ -348,7 +348,7 @@ const data = {
             college: "Engineering",
             contact: "09123456555",
             email: "jadlcruz@gmail.com",
-            image: require("./src/img/user-7.jpg"),
+            image: require("./img/user-7.jpg"),
             schedule: {
                 Mon: [
                     {
@@ -405,7 +405,7 @@ const data = {
             college: "Engineering",
             contact: "09123456232",
             email: "iaguevarra@gmail.com",
-            image: require("./src/img/user-8.jpg"),
+            image: require("./img/user-8.jpg"),
             schedule: {
                 Mon: [
                     {
@@ -462,7 +462,7 @@ const data = {
             college: "Engineering",
             contact: "0912345345",
             email: "telbelano@gmail.com",
-            image: require("./src/img/user-9.jpg"),
+            image: require("./img/user-9.jpg"),
             schedule: {
                 Mon: [
                     {
@@ -519,7 +519,7 @@ const data = {
             college: "Engineering",
             contact: "0912345353",
             email: "maumayvane@gmail.com",
-            image: require("./src/img/user-10.jpg"),
+            image: require("./img/user-10.jpg"),
             schedule: {
                 Mon: [
                     {
@@ -576,7 +576,7 @@ const data = {
             college: "Engineering",
             contact: "0912345375",
             email: "niprotacio@gmail.com",
-            image: "./src/img/user-1.jpg",
+            image: "./img/user-1.jpg",
             schedule: {
                 Mon: [
                     {
