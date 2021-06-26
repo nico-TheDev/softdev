@@ -1,34 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { Text, View, ImageBackground } from "react-native";
 
-import dummyData from "../data";
-import bgOne from "../img/bg-1.png";
+import bgTwo from "../img/bg-2.png";
 import AppStyle from "../styles/styleApp";
+import ProfileStyle from "../styles/styleHome";
+import ProfileDetails from "../components/ProfileDetails";
 
-const HomeScreen = () => {
-    const [profList, setprofList] = useState(null);
-
-    // MIMICS AN API CALL
-
-    useEffect(() => {
-        setTimeout(() => {
-            setprofList(dummyData.profs);
-            console.log(profList);
-        }, 1000);
-    }, []);
+const ProfileScreen = ({ route }) => {
+    const { prof } = route.params;
 
     return (
         <ImageBackground
-            source={bgOne}
+            source={bgTwo}
             style={AppStyle.background}
             resizeMode="cover"
         >
-            <View style={AppStyle.container}>
-                <Text>Search Results</Text>
-                <Text>Tangina</Text>
+            <View style={ProfileStyle.container}>
+                <ProfileDetails prof={prof} />
             </View>
         </ImageBackground>
     );
 };
 
-export default HomeScreen;
+export default ProfileScreen;
