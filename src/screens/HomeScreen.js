@@ -5,6 +5,10 @@ import dummyData from "../data";
 import bgOne from "../img/bg-1.png";
 import homeStyle from "../styles/styleHome";
 
+// IMPORT COMPONENTS
+import Search from "../components/Search";
+import Suggestion from "../components/Suggestion";
+
 const HomeScreen = ({ navigation }) => {
     const [profList, setprofList] = useState(null);
 
@@ -23,12 +27,8 @@ const HomeScreen = ({ navigation }) => {
             resizeMode="cover"
         >
             <View style={homeStyle.container}>
-                <Text style={homeStyle.mont}>Find your Professor</Text>
-                <Text>Hello World!</Text>
-                <Button
-                    onPress={() => navigation.navigate("Profile")}
-                    title="Find"
-                />
+                <Search />
+                <Suggestion profList={profList} />
             </View>
         </ImageBackground>
     );
