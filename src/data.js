@@ -576,7 +576,7 @@ const data = {
             college: "Engineering",
             contact: "0912345375",
             email: "niprotacio@gmail.com",
-            image: "./img/user-1.jpg",
+            image: require("./img/user-11.jpg"),
             schedule: {
                 Mon: [
                     {
