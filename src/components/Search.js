@@ -4,14 +4,20 @@ import { View, Text, TextInput } from "react-native";
 import styles from "../styles/styleSearch";
 import Button from "../components/Button";
 
-export default function Search() {
+export default function Search({ title }) {
+    // make use of useNavigation hook from react navigation
     const [userInput, setUserInput] = useState("");
 
     const handleChangeText = (text) => setUserInput(text);
 
+    const handleSubmit = () => {
+        // NAVIGATE TO A SEARCH PAGE RESULTS
+        // PASS SEARCH QUERY which is userInput
+    };
+
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Find your Professor </Text>
+            <Text style={styles.title}>{title}</Text>
             <Text style={styles.subtitle}>
                 Keep in touch with the schedules and activities of your
                 professor in the Computer Engineering Department
@@ -20,8 +26,9 @@ export default function Search() {
                 style={styles.input}
                 placeholder="Input Professor's Name"
                 onChangeText={handleChangeText}
+                onSubmitEditing={handleSubmit}
             />
-            <Button />
+            <Button handleSubmit={handleSubmit} />
         </View>
     );
 }

@@ -27,8 +27,12 @@ const HomeScreen = ({ navigation }) => {
             resizeMode="cover"
         >
             <View style={homeStyle.container}>
-                <Search />
-                <Suggestion profList={profList} />
+                <Search title="Find Your Professor" />
+                <Suggestion
+                    profList={profList}
+                    isRandomized={true}
+                    title="You May Know"
+                />
             </View>
         </ImageBackground>
     );

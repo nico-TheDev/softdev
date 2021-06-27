@@ -46,6 +46,8 @@ export default StyleSheet.create({
         borderRadius: 15,
         marginLeft: 10,
         paddingVertical: 20,
+        borderColor: "#FC9C17",
+        borderWidth: 3,
     },
     btnText: { fontSize: 15, fontFamily: "Montserrat-Light" },
     name: {
@@ -69,7 +71,7 @@ export default StyleSheet.create({
     bottom: {
         flexDirection: "row",
         justifyContent: "space-between",
-        alignItems: "center",
+        alignItems: "flex-end",
         width: "100%",
         height: 50,
         flex: 1,

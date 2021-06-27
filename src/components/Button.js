@@ -3,8 +3,10 @@ import { TouchableHighlight, View, Text } from "react-native";
 
 import styles from "../styles/styleButton";
 
-export default function Button() {
-    const handlePress = () => {};
+export default function Button({ handleSubmit }) {
+    const handlePress = () => {
+        handleSubmit();
+    };
 
     return (
         <TouchableHighlight onPress={handlePress}>
