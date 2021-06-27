@@ -1,18 +1,23 @@
 import React, { useState } from "react";
 import { View, Text, TextInput } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import styles from "../styles/styleSearch";
 import Button from "../components/Button";
 
 export default function Search({ title }) {
     // make use of useNavigation hook from react navigation
+    const navigation = useNavigation();
+
     const [userInput, setUserInput] = useState("");
 
     const handleChangeText = (text) => setUserInput(text);
 
-    const handleSubmit = () => {
+    const handleSubmit = (query) => {
         // NAVIGATE TO A SEARCH PAGE RESULTS
         // PASS SEARCH QUERY which is userInput
+        setUserInput(query)
+        navigation.navigate("Results", userInput);
     };
 
     return (
