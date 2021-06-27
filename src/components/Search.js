@@ -13,11 +13,11 @@ export default function Search({ title }) {
 
     const handleChangeText = (text) => setUserInput(text);
 
-    const handleSubmit = (query) => {
+    const handleSubmit = (_) => {
         // NAVIGATE TO A SEARCH PAGE RESULTS
         // PASS SEARCH QUERY which is userInput
-        setUserInput(query)
-        navigation.navigate("Results", userInput);
+        console.log(userInput);
+        navigation.navigate("Results", { query: userInput });
     };
 
     return (
