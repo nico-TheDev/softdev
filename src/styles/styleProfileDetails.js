@@ -13,8 +13,10 @@ export default StyleSheet.create({
         elevation: 5,
         borderRadius: 15,
         backgroundColor: "white",
-        padding: 20,
-        height: "40%",
+        padding: 15,
+        height: "35%",
+        flex: 1,
+        justifyContent: "space-around",
     },
     img: {
         width: 110,
@@ -29,10 +31,10 @@ export default StyleSheet.create({
         borderColor: "#FC9C17",
         borderWidth: 3,
         borderRadius: 15,
-        display: "flex",
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
+        paddingVertical: 20,
     },
     buttonFilled: {
         display: "flex",
@@ -43,6 +45,7 @@ export default StyleSheet.create({
         color: "white",
         borderRadius: 15,
         marginLeft: 10,
+        paddingVertical: 20,
     },
     btnText: { fontSize: 15, fontFamily: "Montserrat-Light" },
     name: {
@@ -59,16 +62,16 @@ export default StyleSheet.create({
         fontSize: 12,
     },
     top: {
-        display: "flex",
+        flex: 1,
         flexDirection: "row",
         marginBottom: 20,
     },
     bottom: {
-        display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
-        alignContent: "stretch",
+        alignItems: "center",
         width: "100%",
+        height: 50,
         flex: 1,
     },
     right: {
