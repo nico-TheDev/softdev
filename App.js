@@ -10,6 +10,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 // IMPORT SCREENS HERE
 import HomeScreen from "./src/screens/HomeScreen";
 import ProfileScreen from "./src/screens/ProfileScreen";
+import ResultsScreen from "./src/screens/ResultsScreen";
 
 // IMPORT UTILS
 
@@ -43,6 +44,11 @@ export default function App() {
                     name="Profile"
                     component={ProfileScreen}
                     options={{ title: "Profile" }}
+                />
+                <Stack.Screen
+                    name = "Results"
+                    component = {ResultsScreen}
+                    options = {{ title: "Results" }}
                 />
             </Stack.Navigator>
         </NavigationContainer>

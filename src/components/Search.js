@@ -17,7 +17,7 @@ export default function Search({ title }) {
         // NAVIGATE TO A SEARCH PAGE RESULTS
         // PASS SEARCH QUERY which is userInput
         console.log(userInput);
-        navigation.navigate("Results", { query: userInput });
+        navigation.navigate("ResultsScreen", { query: userInput });
     };
 
     return (
