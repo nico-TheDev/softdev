@@ -11,15 +11,19 @@ export default function Suggestion({ profList, isRandomized, title }) {
         <View style={styles.container}>
             <Text style={styles.title}>{title}</Text>
             <ScrollView style={styles.scroll}>
-                {profList && isRandomized
-                    ? shuffle(profList)
-                          .slice(0, 4)
-                          .map((item) => (
-                              <ProfileCard key={item.id} prof={item} />
-                          ))
-                    : profList?.map((item) => (
-                          <ProfileCard key={item.id} prof={item} />
-                      ))}
+                {profList && isRandomized ? (
+                    shuffle(profList)
+                        .slice(0, 4)
+                        .map((item) => (
+                            <ProfileCard key={item.id} prof={item} />
+                        ))
+                ) : profList ? (
+                    profList.map((item, i) => (
+                        <ProfileCard key={i} prof={item} />
+                    ))
+                ) : (
+                    <Text>No Results</Text>
+                )}
             </ScrollView>
         </View>
     );
