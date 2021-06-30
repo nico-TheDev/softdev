@@ -17,7 +17,9 @@ export default function Search({ title }) {
 
     const handleSubmit = (_) => {
         if (userInput != "") {
-            navigation.navigate("Results", { searchQuery: userInput });
+            const searchQuery = userInput;
+            setUserInput("");
+            navigation.navigate("Results", { searchQuery });
         } else {
             console.log("BLANK INPUT");
             setIsAlertOpen(true);
@@ -45,6 +47,7 @@ export default function Search({ title }) {
                 placeholder="Input Professor's Name"
                 onChangeText={handleChangeText}
                 onSubmitEditing={handleSubmit}
+                value={userInput}
             />
             <Button handleSubmit={handleSubmit} />
         </View>

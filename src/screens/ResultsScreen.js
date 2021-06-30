@@ -7,7 +7,7 @@ import homeStyle from "../styles/styleHome";
 
 // IMPORT COMPONENTS
 import Search from "../components/SearchTwo";
-import Suggestion from "../components/Suggestion";
+import ResultCards from "../components/ResultCards";
 
 const ResultsScreen = ({ navigation, route }) => {
     const [searchResults, setSearchResults] = useState([...dummyData.profs]);
@@ -41,9 +41,8 @@ const ResultsScreen = ({ navigation, route }) => {
                     setQuery={setSearchQuery}
                     setSearchResults={setSearchResults}
                 />
-                <Suggestion
+                <ResultCards
                     profList={searchResults}
-                    isRandomized={false}
                     title={`Results for: ${searchQuery}`}
                 />
             </View>

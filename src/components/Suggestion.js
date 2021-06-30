@@ -4,26 +4,19 @@ import { View, Text, ScrollView } from "react-native";
 import styles from "../styles/styleSuggestion";
 import ProfileCard from "../components/ProfileCard";
 import shuffle from "../util/shuffleArray";
-export default function Suggestion({ profList, isRandomized, title }) {
+export default function Suggestion({ profList, title }) {
     // if isRandomized, will fit you may know section
     // if not randomized, can be used in search results
     return (
         <View style={styles.container}>
             <Text style={styles.title}>{title}</Text>
             <ScrollView style={styles.scroll}>
-                {profList && isRandomized ? (
+                {profList &&
                     shuffle(profList)
                         .slice(0, 4)
                         .map((item) => (
                             <ProfileCard key={item.id} prof={item} />
-                        ))
-                ) : profList ? (
-                    profList.map((item, i) => (
-                        <ProfileCard key={i} prof={item} />
-                    ))
-                ) : (
-                    <Text>No Results</Text>
-                )}
+                        ))}
             </ScrollView>
         </View>
     );
