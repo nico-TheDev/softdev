@@ -23,8 +23,12 @@ export default function SearchTwo({
             // shit solution but working
             setTimeout(() => setIsAlertOpen(false), 2000);
         } else {
-            setSearchResults([...data.profs]);
-            setQuery(userInput);
+            setQuery((prevInput) => {
+                if (prevInput != userInput) {
+                    setSearchResults([...data.profs]);
+                }
+                return userInput;
+            });
             setUserInput("");
         }
     };
