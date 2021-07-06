@@ -13,6 +13,7 @@ import HomeScreen from "./src/screens/HomeScreen";
 import ProfileScreen from "./src/screens/ProfileScreen";
 import ResultsScreen from "./src/screens/ResultsScreen";
 import MapScreen from "./src/screens/MapScreen";
+import WelcomeScreen from "./src/screens/WelcomeScreen";
 
 // IMPORT UTILS
 
@@ -48,6 +49,13 @@ export default function App() {
     return (
         <NavigationContainer>
             <Stack.Navigator>
+                <Stack.Screen
+                    name="Welcome"
+                    component={WelcomeScreen}
+                    options={{
+                        title: "Welcome",
+                    }}
+                />
                 <Stack.Screen
                     name="Home"
                     component={HomeScreen}

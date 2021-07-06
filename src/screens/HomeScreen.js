@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Text, View, ImageBackground, Button } from "react-native";
+import { StackActions, CommonActions } from "@react-navigation/native";
 
 import dummyData from "../data";
 import bgOne from "../img/bg-1.png";
@@ -15,9 +16,18 @@ const HomeScreen = ({ navigation }) => {
     // MIMICS AN API CALL
 
     useEffect(() => {
-        setTimeout(() => {
-            setprofList(dummyData.profs);
-        }, 1000);
+        navigation.dispatch((state) => {
+            // Remove the home route from the stack
+            const routes = state.routes.filter((r) => r.name !== "Welcome");
+
+            return CommonActions.reset({
+                ...state,
+                routes,
+                index: routes.length - 1,
+            });
+        });
+
+        setprofList(dummyData.profs);
     }, []);
 
     return (
