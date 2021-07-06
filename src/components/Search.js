@@ -13,7 +13,7 @@ export default function Search({ title }) {
 
     const [userInput, setUserInput] = useState("");
 
-    const handleChangeText = (text) => setUserInput(text);
+    const handleChangeText = (text) => setUserInput(text.toLowerCase());
 
     const handleSubmit = (_) => {
         if (userInput != "") {

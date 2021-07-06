@@ -13,17 +13,14 @@ const ResultsScreen = ({ navigation, route }) => {
     const [searchResults, setSearchResults] = useState([...dummyData.profs]);
     const [searchQuery, setSearchQuery] = useState(route.params.searchQuery);
 
-    // for (let i = 0; i < searchResults.length; i++) {
-    //     if (!searchResults[i].name.includes(searchQuery)) {
-    //         const index = searchResults.indexOf(searchResults[i].name);
-    //         searchResults.splice(index, 1);
-    //     }
-    // }
-
     useEffect(() => {
-        const arr = searchResults.filter((prof) =>
-            prof.name.toLowerCase().includes(searchQuery)
-        );
+        console.log("IM CALLED!!!");
+        const arr = searchResults.filter((prof) => {
+            if (prof.name.toLowerCase().includes(searchQuery)) {
+                console.log("HEL YEAH");
+                return prof;
+            }
+        });
         console.log(arr);
         setSearchResults(arr);
     }, [searchQuery]);

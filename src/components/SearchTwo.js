@@ -15,7 +15,7 @@ export default function SearchTwo({
     const [userInput, setUserInput] = useState("");
     const [isAlertOpen, setIsAlertOpen] = useState(false);
 
-    const handleChangeText = (text) => setUserInput(text);
+    const handleChangeText = (text) => setUserInput(text.toLowerCase());
 
     const handleSubmit = (_) => {
         if (userInput == "") {
